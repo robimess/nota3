@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<main class="container py-5">
+    <section class="card card-body">
+        <h1 class="display-1 text-center">Django CRUD</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Voluptates nam nobis at culpa deserunt officiis molestiae,
+        similique ducimus, ad totam soluta ea quis neque qui dignissimos 
+        perspiciatis doloribus maxime. Molestias, quo ab doloremque 
+        accusamus alias, a ducimus facere velit quis enim distinctio 
+        quam ipsum amet blanditiis sint. Modi tempore facere unde 
+        voluptas accusantium nemo, voluptatum blanditiis veritatis 
+        quod praesentium ea odit laboriosam soluta cupiditate beatae 
+        veniam ut maiores aperiam, repudiandae laudantium consequatur. 
+        Voluptates aut ducimus a distinctio, obcaecati eveniet? Vitae 
+        architecto quaerat ab, vel commodi voluptas, modi magnam quisquam, 
+        laborum accusantium esse asperiores! Perspiciatis nulla natus libero 
+        necessitatibus aperiam consequatur?</p>
+
+        <div class="text-center">
+            <a class="btn btn-primary" href="/logout">
+                Cerrar Sesion
+            </a>
+        </div>
+    </section>
+</main>
+{% else %}
+<main class="container py-5">
+    <section class="card card-body">
+        <h1 class="display-1 text-center">Django CRUD</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Voluptates nam nobis at culpa deserunt officiis molestiae,
+        similique ducimus, ad totam soluta ea quis neque qui dignissimos 
+        perspiciatis doloribus maxime. Molestias, quo ab doloremque 
+        accusamus alias, a ducimus facere velit quis enim distinctio 
+        quam ipsum amet blanditiis sint. Modi tempore facere unde 
+        voluptas accusantium nemo, voluptatum blanditiis veritatis 
+        quod praesentium ea odit laboriosam soluta cupiditate beatae 
+        veniam ut maiores aperiam, repudiandae laudantium consequatur. 
+        Voluptates aut ducimus a distinctio, obcaecati eveniet? Vitae 
+        architecto quaerat ab, vel commodi voluptas, modi magnam quisquam, 
+        laborum accusantium esse asperiores! Perspiciatis nulla natus libero 
+        necessitatibus aperiam consequatur?</p>
+
+        <div class="text-center">
+            <a class="btn btn-primary" href="/signin">
+                Iniciar Sesion
+            </a>
+            <a class="btn btn-primary" href="/signup">
+                Registarse
+            </a>
+        </div>
+    </section>
+</main>
+{% endif %}
+{% endblock %}

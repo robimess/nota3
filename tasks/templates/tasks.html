@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            {% if request.path == '/tasks_completed/' %}
+            <h1 class="text-center display-3 py-5">Tareas Completadas</h1>
+            {% else %}
+            <h1 class="text-center display-3 py-5">Tareas Pendientes</h1>
+            {% endif %}
+            <ul class="list-group">
+                {% for task in tasks %}
+                    <a class="list-group-item " href="{% url 'task_detail' task.id %}">
+                        <header class="d-flex justify-content-between">
+                            {% if task.importante %}
+                            <h1 class="fw-bold text-success">{{task.titulo}}</h1>
+                            <p>Responsable: {{task.usuario.username}}</p>
+                            {% else %}
+                            <h1 class="fw-bold">{{task.titulo}}</h1>
+                            <p>Responsable: {{task.usuario.username}}</p>
+                            {% endif %}
+                        </header>
+                        <p>Descripcion: {{task.descripcion}}</p>
+                        {% if task.importante %}
+                        <p>Importante: Si</p>
+                        {% else %}
+                        <p>Importante: No</p>
+                        {% endif %}
+                    <p>{{task.fecha_termino|date:'j M Y '}}</p>
+                    </a>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+<main class="container py-5">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <form method="post" class="card card-body">
+                {{error}}
+                {% csrf_token %}
+                <div>
+                    <h1 class="text-center display-3 py-1">Registrarse</h1>
+                    <div class="mb-3">
+                        <label for="username" class="py-1">Nombre de usuario: </label>
+                        <input type="text" name="username" id="username" 
+                        class="form-control" placeholder="Nombre de usuario" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="py-1">Correo Electronico: </label>
+                        <input type="email" name="email" id="email" 
+                        class="form-control" placeholder="Correo" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="py-1">Contraseña: </label>
+                        <input type="password" name="password1" id="password1" 
+                        class="form-control" placeholder="Ingrese contraseña" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="py-1">Confirme Contraseña: </label>
+                        <input type="password" name="password2" id="password2" 
+                        class="form-control" placeholder="Repetir contraseña" >
+                    </div>
+                </div>
+                <button class="btn btn-primary">
+                    Enviar
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
